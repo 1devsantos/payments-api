@@ -1,0 +1,16 @@
+services:
+  postgres_container:
+    container_name: payments_container
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: devsantos
+      POSTGRES_PASSWORD: filipe
+      POSTGRES_DB: payments_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    
+volumes:
+  postgres_data:
